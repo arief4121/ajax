@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+</head>
+<body>
+    <h2>Tabel :</h2>
+    <div id="tabel"></div>
+    <br>
+    <button id="button">Tampilkan Tabel</button>
+
+
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#button").click(function(){
+                $("#tabel").html("Loading......")
+                // $("#tabel").load("data.html")
+                $.get( "data.html", function( data ) {
+                    $( "#tabel" ).html( data );
+                });
+            })
+        })
+    </script>
+</body>
+</html>
